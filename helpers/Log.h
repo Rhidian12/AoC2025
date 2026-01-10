@@ -4,6 +4,7 @@
 
 enum class LogLevel
 {
+    Trace,
     Debug,
     Info,
     Success,
@@ -12,10 +13,11 @@ enum class LogLevel
 
 struct Logger
 {
-    LogLevel logLevel;
+    LogLevel logLevel = LogLevel::Info;
 
-    void LogInfo(std::string_view message) const;
+    void LogTrace(std::string_view message) const;
     void LogDebug(std::string_view message) const;
+    void LogInfo(std::string_view message) const;
     void LogSuccess(std::string_view message) const;
     void LogError(std::string_view message) const;
 };

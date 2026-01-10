@@ -22,4 +22,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_subdirectory(helpers)
 set(HELPER_INCLUDE_DIR ${HELPER_INCLUDE_DIR})
 
-add_subdirectory(exercise1)
+# add_subdirectory(exercise1)
+add_subdirectory(exercise2)
