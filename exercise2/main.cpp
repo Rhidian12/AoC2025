@@ -27,24 +27,6 @@ std::string RangeToString(auto range)
   return str;
 }
 
-bool FindAdjacentPatterns(auto range, auto pattern)
-{
-  for (size_t i{}; i < range.size() / pattern.size(); ++i)
-  {
-    auto subRangeOne = range | std::views::drop(i * pattern.size()) | std::views::take(pattern.size());
-    auto subRangeTwo = range | std::views::drop((i + 1) * pattern.size()) | std::views::take(pattern.size());
-
-    LOGGER.LogDebug(std::format("SubRangeOne: {}. SubRangeTwo: {}", subRangeOne, subRangeTwo));
-
-    if (std::ranges::equal(subRangeOne, subRangeTwo))
-    {
-      return true;
-    }
-  }
-
-  return false;
-}
-
 // returns uint64_t because im lazy
 std::vector<uint64_t> GetDigitsFromNumber(uint64_t number)
 {
